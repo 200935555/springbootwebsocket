@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <title>Spring Boot +WebSocket+广播式</title>
+    <script th:src="@{../static/sockjs.min.js}"></script>
+    <script th:src="@{../static/stomp.min.js}"></script>
+    <script th:src="@{../static/jquery.js}"></script>
 </head>
 <body onload="disconnect()">
 <noscript><h2 style="color: #ff0000">您的浏览器不支持websocket</h2></noscript>
@@ -17,9 +20,6 @@
         <p id="response"></p>
     </div>
 </div>
-<script th:src="@{../static/sockjs.min.js}"></script>
-<script th:src="@{../static/stomp.min.js}"></script>
-<script th:src="@{../static/jquery.js}"></script>
 <script type="text/javascript">
     var stompClient = null;
     function setConnected(connected) {
